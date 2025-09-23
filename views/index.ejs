@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Message Board</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+   <h1 class="mainHead"><%= title %></h1> 
+    <div class="messagesCont">
+        <% messages.map((message)=>{ %>
+            <div class="chatCont">
+              <div>  <%= message.user %>:<%= message.text %> </div>
+              <div> time: <%= message.added %> </div>
+            </div>
+            <% }) %>
+    <a href="/new"><button>Send a Message</button></a>
+    </div>
+  </body>
+</html>
