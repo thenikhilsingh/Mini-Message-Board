@@ -69,6 +69,7 @@ form button {
   border-radius: 10px;
   background-color: var(--primary-color);
   border: none;
+  cursor: pointer;
 }
 
 .chatContHead {
@@ -101,4 +102,3 @@ form button {
   font-size: bold;
   color: var(--secondary-color);
 }
-
