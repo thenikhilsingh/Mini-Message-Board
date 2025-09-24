@@ -1,25 +1,14 @@
 const { Router } = require("express");
 const index = Router();
 const newMessages = require("./newMessages.js");
-
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+const messages = require("../db.js");
 
 index.get("/", (req, res) => {
   res.render("index", { title: "Mini Message board", messages: messages });
 });
 
 newMessages.post("/", (req, res) => {
+  const keys=Object.keys(messages)
   const formData = {
     text: req.body.user,
     user: req.body.message,

@@ -4,18 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-   <h1 class="mainHead"><%= title %></h1> 
+    <h1 class="mainHead"><%= title %></h1>
     <div class="messagesCont">
-        <% messages.map((message)=>{ %>
-            <div class="chatCont">
-              <div>  <%= message.user %>:<%= message.text %> </div>
-              <div> time: <%= message.added %> </div>
+      <% messages.map((message)=>{ %>
+      <div class="chatMain">
+        <a href="/messageDetails">
+          <div class="chatCont">
+            <div>
+              <span class="chatContHead"><%= message.user %>:</span> <%=
+              message.text %>
             </div>
-            <% }) %>
-    <a href="/new"><button>Send a Message</button></a>
+          </div>
+        </a>
+        <div class="timeCont"><%= message.added.toLocaleTimeString() %></div>
+      </div>
+      <% }) %>
+      <a href="/new"><button>Send a Message</button></a>
     </div>
   </body>
 </html>

@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const index = require("./routes/index.js");
 const newMessages = require("./routes/newMessages.js");
+const messageDetails = require("./routes/messageDetails.js");
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -14,6 +15,7 @@ app.set("view engine", "ejs");
 
 app.use("/", index);
 app.use("/new", newMessages);
+app.use("/messageDetails", messageDetails);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (error) => {
