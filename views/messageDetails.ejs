@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Message Board</title>
-    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <h1 class="mainHead">Message Details</h1>
-    
+    <div class="detCont">
+      <% if(messageDet){%>
+        <div><span class="head">Message sent by:</span> <%= messageDet.user %> </div>
+        <div><span class="head">Message:</span> <%= messageDet.text %> </div>
+        <div><span class="head">Message sent on:</span> <%= messageDet.added.toLocaleTimeString() %> </div>
+        <div><span class="head">Message sent on Date:</span> <%= messageDet.added.toLocaleDateString() %> </div>
+     <% } else{%>
+      <div>Message not found!</div>
+     <%}%>    
+    </div>
   </body>
 </html>

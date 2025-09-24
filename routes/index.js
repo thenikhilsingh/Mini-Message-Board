@@ -8,10 +8,10 @@ index.get("/", (req, res) => {
 });
 
 newMessages.post("/", (req, res) => {
-  const keys=Object.keys(messages)
   const formData = {
-    text: req.body.user,
-    user: req.body.message,
+    id: messages.length + 1,
+    text: req.body.message,
+    user: req.body.user,
     added: new Date(),
   };
   messages.push(formData);

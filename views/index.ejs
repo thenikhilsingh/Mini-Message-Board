@@ -11,10 +11,10 @@
     <div class="messagesCont">
       <% messages.map((message)=>{ %>
       <div class="chatMain">
-        <a href="/messageDetails">
+        <a href="/messageDetails/message/<%=message.id%>">
           <div class="chatCont">
             <div>
-              <span class="chatContHead"><%= message.user %>:</span> <%=
+              <span class="chatContHead"><%= message.user %>:</span><%=
               message.text %>
             </div>
           </div>

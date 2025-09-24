@@ -1,8 +1,7 @@
 const { Router } = require("express");
 const messageDetails = Router();
+const getMessageDetails = require("../controllers/messageDetailsController.js");
 
-messageDetails.get("/:messageId", (req, res) => {
-  res.render("messageDetails");
-});
+messageDetails.get("/message/:id", getMessageDetails);
 
 module.exports = messageDetails;
